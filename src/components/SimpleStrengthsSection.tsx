@@ -140,36 +140,60 @@ export function SimpleStrengthsSection() {
     }
   }
 
-  // Auto-scroll within the strengths container to show all highlighted strengths
+  // Hybrid auto-scroll: container-based for mobile, page-level for desktop
   useEffect(() => {
-    if (selectedCombo && strengthsContainerRef.current) {
-      const container = strengthsContainerRef.current
-      const lastHighlightedRank = Math.max(...selectedCombo.strengthRanks)
+    if (!selectedCombo) return
 
-      // Find the element for the bottom-most highlighted strength
-      const lastHighlightedElement = container.querySelector(`[data-strength-rank="${lastHighlightedRank}"]`) as HTMLElement
+    const isDesktop = window.innerWidth >= 1024 // lg breakpoint
 
-      if (lastHighlightedElement) {
-        // Get positions relative to the container
-        const containerRect = container.getBoundingClientRect()
-        const elementRect = lastHighlightedElement.getBoundingClientRect()
+    if (isDesktop) {
+      // Desktop: Scroll to combos section with nav bar offset
+      const combosSection = document.querySelector('#strengths') as HTMLElement
+      if (combosSection) {
+        const headerHeight = 80 // Same as MobileNav headerHeight
+        const targetPosition = combosSection.offsetTop - headerHeight
 
-        // Calculate scroll position to show the bottom-most element at the bottom of the view
-        // This ensures all highlighted strengths above it are visible
-        const scrollTop = container.scrollTop + (elementRect.bottom - containerRect.bottom) + 10
-
-        // Smooth scroll within the container only
-        container.scrollTo({
-          top: scrollTop,
+        isAutoScrolling.current = true
+        window.scrollTo({
+          top: targetPosition,
           behavior: 'smooth'
         })
+
+        // Reset auto-scrolling flag after animation
+        setTimeout(() => {
+          isAutoScrolling.current = false
+        }, 1000)
+      }
+    } else {
+      // Mobile: Container-based scrolling (existing logic)
+      if (strengthsContainerRef.current) {
+        const container = strengthsContainerRef.current
+        const lastHighlightedRank = Math.max(...selectedCombo.strengthRanks)
+
+        // Find the element for the bottom-most highlighted strength
+        const lastHighlightedElement = container.querySelector(`[data-strength-rank="${lastHighlightedRank}"]`) as HTMLElement
+
+        if (lastHighlightedElement) {
+          // Get positions relative to the container
+          const containerRect = container.getBoundingClientRect()
+          const elementRect = lastHighlightedElement.getBoundingClientRect()
+
+          // Calculate scroll position to show the bottom-most element at the bottom of the view
+          const scrollTop = container.scrollTop + (elementRect.bottom - containerRect.bottom) + 10
+
+          // Smooth scroll within the container only
+          container.scrollTo({
+            top: scrollTop,
+            behavior: 'smooth'
+          })
+        }
       }
     }
   }, [selectedCombo])
 
   // Auto-scroll within the combos container when a combo is expanded (mobile only)
   useEffect(() => {
-    if (selectedCombo && combosContainerRef.current) {
+    if (selectedCombo && window.innerWidth < 1024 && combosContainerRef.current) {
       const container = combosContainerRef.current
 
       // Find the selected combo element
