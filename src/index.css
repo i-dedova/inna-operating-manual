@@ -1,0 +1,416 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Comfortable warm neutral palette */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 15%;
+
+    /* Warm slate primary - comfortable and professional */
+    --primary: 215 25% 27%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Light warm gray secondary */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 215 25% 27%;
+
+    /* Soft muted tones */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    /* Warm purple accent - sophisticated but subtle */
+    --accent: 250 30% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Better readability orange from AI workbook */
+    --highlight: 39 74% 58%;
+    --highlight-foreground: 240 10% 15%;
+
+    /* CliftonStrengths domain colors - adapted to website palette */
+    --strategic-thinking: 142 47% 50%;  /* Sage green that complements the warm palette */
+    --strategic-thinking-foreground: 0 0% 98%;
+    --executing: 250 30% 60%;  /* Website accent purple */
+    --executing-foreground: 0 0% 98%;
+    --influencing: 39 74% 58%;  /* Better readability orange from AI workbook */
+    --influencing-foreground: 240 10% 15%;
+    --relationship-building: 215 25% 27%;  /* Website primary blue */
+    --relationship-building-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 215 25% 27%;
+
+    /* Subtle, comfortable gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(215 25% 27%), hsl(250 30% 60%));
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(250 30% 60%), hsl(43 74% 66%));
+    
+    /* Gentle shadows */
+    --shadow-elegant: 0 10px 40px -15px hsl(240 10% 15% / 0.1);
+    --shadow-glow: 0 0 30px hsl(215 25% 27% / 0.1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Comfortable dark theme */
+    --background: 240 10% 8%;
+    --foreground: 220 14% 90%;
+
+    --card: 240 8% 12%;
+    --card-foreground: 220 14% 90%;
+
+    --popover: 240 8% 12%;
+    --popover-foreground: 220 14% 90%;
+
+    /* Lighter primary for dark mode visibility */
+    --primary: 215 25% 70%;
+    --primary-foreground: 240 10% 8%;
+
+    --secondary: 240 6% 18%;
+    --secondary-foreground: 220 14% 90%;
+
+    --muted: 240 6% 15%;
+    --muted-foreground: 220 9% 60%;
+
+    /* Softer purple accent in dark mode */
+    --accent: 250 30% 70%;
+    --accent-foreground: 240 10% 8%;
+
+    /* Better readability orange for dark mode */
+    --highlight: 39 74% 68%;
+    --highlight-foreground: 240 10% 8%;
+
+    /* CliftonStrengths domain colors - dark mode */
+    --strategic-thinking: 142 47% 60%;  /* Lighter sage green for dark mode */
+    --strategic-thinking-foreground: 240 10% 8%;
+    --executing: 250 30% 70%;  /* Lighter purple for dark mode */
+    --executing-foreground: 240 10% 8%;
+    --influencing: 39 74% 68%;  /* Better readability orange for dark mode */
+    --influencing-foreground: 240 10% 8%;
+    --relationship-building: 215 25% 70%;  /* Lighter blue for dark mode */
+    --relationship-building-foreground: 240 10% 8%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 220 14% 90%;
+
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 215 25% 70%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(215 25% 70%), hsl(250 30% 80%));
+    --gradient-surface: linear-gradient(180deg, hsl(240 8% 12%), hsl(240 6% 10%));
+    --gradient-accent: linear-gradient(135deg, hsl(250 30% 70%), hsl(43 74% 76%));
+    
+    /* Dark shadows */
+    --shadow-elegant: 0 10px 40px -15px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 30px hsl(215 25% 70% / 0.2);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ReactFlow overrides - remove default node borders and ensure full coverage */
+.react-flow__node {
+  border: none !important;
+}
+
+.react-flow__node.selected {
+  border: none !important;
+}
+
+.react-flow__node:hover {
+  border: none !important;
+}
+
+/* Ensure ReactFlow fills container completely */
+.react-flow {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.react-flow__renderer {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.react-flow__background {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.react-flow__viewport {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Force ReactFlow pane to fill completely */
+.react-flow__pane {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Position controls relative to viewport like Miro/Figma */
+.react-flow__controls {
+  position: fixed !important;
+  bottom: 1rem !important;
+  left: 1rem !important;
+  z-index: 1000 !important;
+}
+
+/* Mobile landscape positioning override - temporarily disabled */
+/* .mobile-landscape .react-flow {
+  transform: translateY(150px) !important;
+}
+
+.mobile-landscape .react-flow__viewport {
+  transform: translateY(0px) !important;
+} */
+
+/* Pulsating ring animation for user guidance */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 hsl(var(--accent) / 0.3);
+    background-color: hsl(var(--accent) / 0.1);
+  }
+  50% {
+    box-shadow: 0 0 0 6px hsl(var(--accent) / 0.1);
+    background-color: hsl(var(--accent) / 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 0 hsl(var(--accent) / 0);
+    background-color: hsl(var(--accent) / 0.1);
+  }
+}
+
+/* Animation delay utility for staggered animations */
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Connection color for flow edges */
+:root {
+  --connection-color: #E09E47;
+}
+
+.dark {
+  --connection-color: hsl(var(--highlight));
+}
+
+/* Workflow node animations */
+@keyframes node-activate {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+}
+
+/* Connector dot animation */
+@keyframes connector-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Workflow guidance animations */
+.animate-pulse-ring {
+  animation: pulse-ring 2s infinite;
+}
+
+.animate-node-activate {
+  animation: node-activate 0.3s ease-out forwards;
+}
+
+.animate-connector-pulse {
+  animation: connector-pulse 1.5s infinite;
+}
+
+/* Flowing dash animation for dotted lines */
+@keyframes flow-dash {
+  0% {
+    stroke-dasharray: 3 6;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 3 6;
+    stroke-dashoffset: -9;
+  }
+}
+
+/* Cursor demonstration animations - starting from tooltip icon position */
+/* Temporarily disabled to fix white screen issue
+@keyframes cursor-demo-desktop {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-250px) translateY(80px);
+    opacity: 1;
+  }
+  70% {
+    transform: translateX(-250px) translateY(80px) scale(0.8);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-250px) translateY(80px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-250px) translateY(80px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes cursor-demo-mobile {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-160px) translateY(140px);
+    opacity: 1;
+  }
+  70% {
+    transform: translateX(-160px) translateY(140px) scale(0.8);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-160px) translateY(140px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-160px) translateY(140px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes cursor-demo-mobile-landscape {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-180px) translateY(60px);
+    opacity: 1;
+  }
+  70% {
+    transform: translateX(-180px) translateY(60px) scale(0.8);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-180px) translateY(60px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-180px) translateY(60px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes target-highlight-desktop {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes target-highlight-mobile {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes target-highlight-mobile-landscape {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+*/
