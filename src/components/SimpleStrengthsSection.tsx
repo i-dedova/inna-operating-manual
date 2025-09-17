@@ -260,7 +260,7 @@ export function SimpleStrengthsSection() {
                 data-strength-rank={strength.rank}
                 className={`cursor-pointer transition-all duration-300 hover:scale-[1.02] border-2 ${getDomainColor(strength.domain)} ${
                   selectedStrength?.rank === strength.rank ? 'ring-2 ring-primary p-1' : 'p-2'
-                } ${getStrengthHighlighting(strength.rank)} relative w-[90%] mx-auto`}
+                } ${getStrengthHighlighting(strength.rank)} relative w-[95%] mx-auto`}
                 onClick={() => {
                   // If there's an active combo and this strength is part of it, don't collapse the combo
                   const isPartOfActiveCombo = selectedCombo && selectedCombo.strengthRanks.includes(strength.rank)
@@ -274,7 +274,7 @@ export function SimpleStrengthsSection() {
                 }}
               >
                 <div className="text-center">
-                  <div className="font-semibold text-sm">#{strength.rank} {strength.name}</div>
+                  <div className="font-semibold text-xs leading-tight break-words">#{strength.rank} {strength.name}</div>
                 </div>
                 {selectedStrength?.rank === strength.rank && (
                   <div className="mt-2 pt-2 border-t border-border/30">
@@ -301,7 +301,7 @@ export function SimpleStrengthsSection() {
                   data-combo-id={combo.id}
                   className={`cursor-pointer transition-all duration-200 hover:scale-[1.02] border-2 bg-background/50 border-border hover:bg-background/80 ${
                     selectedCombo?.id === combo.id ? 'bg-gradient-accent text-accent-foreground shadow-glow p-1' : 'p-2'
-                  } relative w-[90%] mx-auto`}
+                  } relative w-[95%] mx-auto`}
                   style={{
                     animation: !selectedCombo ? `pulse-ring 3s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite ${index * 0.3}s` : undefined
                   }}
@@ -311,7 +311,7 @@ export function SimpleStrengthsSection() {
                   }}
                 >
                   <div className="text-center">
-                    <div className="font-semibold text-sm">{combo.title}</div>
+                    <div className="font-semibold text-xs leading-tight break-words">{combo.title}</div>
                   </div>
                   {selectedCombo?.id === combo.id && (
                     <div className="mt-2 pt-2 border-t border-border/30">
