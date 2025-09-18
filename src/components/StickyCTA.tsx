@@ -34,6 +34,9 @@ export const StickyCTA = ({ isMobileNavOpen = false }: StickyCTAProps) => {
     };
   }, []);
 
+  // Disable sticky CTA completely on mobile and tablet
+  return null;
+
   // Hide sticky CTA if not visible or if mobile nav is open
   if (!isVisible || isMobileNavOpen) return null;
 

@@ -278,8 +278,8 @@ export function SimpleStrengthsSection() {
 
             {/* Mobile Combos Column */}
             <div className="w-full mx-auto">
-              <h3 className="text-lg font-semibold text-foreground mb-2 text-center">Strength Combos</h3>
-              <p className="text-xs text-muted-foreground text-center mb-4">Click to explore combos</p>
+              <h3 className="text-lg font-semibold text-foreground mb-2 text-center">Power Combos</h3>
+              <p className="text-xs text-muted-foreground text-center mb-4">Click to review combos</p>
               <div ref={combosContainerRef} className="space-y-2 max-h-[32rem] overflow-y-auto overflow-x-visible">
               {combosData.map((combo, index) => (
                 <Card
@@ -363,8 +363,8 @@ export function SimpleStrengthsSection() {
 
             {/* Desktop Combos Column */}
             <div className="w-full">
-              <h3 className="text-xl font-semibold text-foreground mb-2 text-center">Strength Combos</h3>
-              <p className="text-sm text-muted-foreground text-center mb-6">Click to view involved strengths</p>
+              <h3 className="text-xl font-semibold text-foreground mb-2 text-center">Power Combos</h3>
+              <p className="text-sm text-muted-foreground text-center mb-6">Click to review combos</p>
               <div className="grid grid-cols-2 gap-4 items-start">
                 {combosData.map((combo, index) => (
                   <Card
