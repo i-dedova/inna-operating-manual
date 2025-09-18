@@ -8,19 +8,22 @@ This is Inna Dedova's professional operating manual - an interactive website tha
 
 ## Features
 
-- **Interactive CliftonStrengths Profile**: Explore 12 top strengths and their combinations
+- **Interactive CliftonStrengths Profile**: Explore 12 top strengths and their dynamic combinations
+- **Dark/Light Theme Toggle**: Automatic system preference detection with manual override
 - **Self-Aware Challenges Management**: Transparent approach to limitations and solutions
-- **AI Automation Showcase**: Links to AI workflow automation workbook
-- **Mobile-Responsive Design**: Optimized for all devices with touch interactions
+- **AI Automation Showcase**: Links to comprehensive AI workflow automation workbook
+- **Mobile-Responsive Design**: Optimized for all devices with touch interactions and vertical shadows
+- **Smooth Navigation**: Clickable logo and section anchors with smooth scrolling
 - **Social Media Optimized**: Proper meta tags and favicon for professional sharing
 
 ## Tech Stack
 
-- **React 18** with TypeScript
-- **Tailwind CSS** with custom design system
-- **Vite** for development and building
-- **Lucide React** for icons
-- **Radix UI** for accessible components
+- **React 18** with TypeScript for type-safe component development
+- **Tailwind CSS** with custom HSL-based design system and dark mode support
+- **Vite** for lightning-fast development and optimized building
+- **Lucide React** for consistent iconography (Moon/Sun for theme toggle)
+- **shadcn/ui** components for accessible and polished UI elements
+- **LocalStorage API** for theme preference persistence
 
 ## Development
 
@@ -44,7 +47,18 @@ Optimized for Vercel deployment with proper build configuration and social media
 
 ## Design Philosophy
 
-Built with self-awareness, powered by results 🚀
+Built with self-awareness, powered by results, enhanced with thoughtful UX 🚀
+
+### Theme System
+- **Light Theme**: Comfortable warm neutral palette for professional readability
+- **Dark Theme**: Elegant dark mode with proper contrast ratios and accessibility
+- **Auto-Detection**: Respects user's system preference (`prefers-color-scheme`)
+- **Persistence**: Remembers user choice across sessions
+
+### Responsive Design
+- **Mobile-First**: Optimized touch interactions with vertical-focused shadows
+- **Progressive Enhancement**: Additional features unlock on larger screens
+- **Accessibility**: Proper ARIA labels, keyboard navigation, and screen reader support
 
 ---
 

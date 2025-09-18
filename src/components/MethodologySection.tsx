@@ -54,7 +54,7 @@ export function MethodologySection() {
               <div className="flex items-center gap-1 sm:gap-4">
                 <div className="w-20 sm:w-32 text-xs sm:text-sm font-medium text-right leading-tight">Strategic Thinking</div>
                 <div className="flex-1 bg-border rounded-full h-6 relative overflow-hidden">
-                  <div className="bg-strategic-thinking h-full rounded-full flex items-center justify-end pr-1 sm:pr-3" style={{width: '70%'}}>
+                  <div className="bg-strategic-thinking h-full rounded-full flex items-center justify-end pr-1 sm:pr-3 w-[65%] sm:w-[70%]">
                     <span className="text-strategic-thinking-foreground text-xs font-semibold">5 (42%)</span>
                   </div>
                 </div>
@@ -63,7 +63,7 @@ export function MethodologySection() {
               <div className="flex items-center gap-1 sm:gap-4">
                 <div className="w-20 sm:w-32 text-xs sm:text-sm font-medium text-right leading-tight">Influencing</div>
                 <div className="flex-1 bg-border rounded-full h-6 relative overflow-hidden">
-                  <div className="bg-influencing h-full rounded-full flex items-center justify-end pr-1 sm:pr-3" style={{width: '55%'}}>
+                  <div className="bg-influencing h-full rounded-full flex items-center justify-end pr-1 sm:pr-3 w-[55%] sm:w-[55%]">
                     <span className="text-influencing-foreground text-xs font-semibold">4 (33%)</span>
                   </div>
                 </div>
@@ -72,7 +72,7 @@ export function MethodologySection() {
               <div className="flex items-center gap-1 sm:gap-4">
                 <div className="w-20 sm:w-32 text-xs sm:text-sm font-medium text-right leading-tight">Executing</div>
                 <div className="flex-1 bg-border rounded-full h-6 relative overflow-hidden">
-                  <div className="bg-executing h-full rounded-full flex items-center justify-end pr-1 sm:pr-3" style={{width: '35%'}}>
+                  <div className="bg-executing h-full rounded-full flex items-center justify-end pr-1 sm:pr-3 w-[40%] sm:w-[35%]">
                     <span className="text-executing-foreground text-xs font-semibold">2 (17%)</span>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ export function MethodologySection() {
               <div className="flex items-center gap-1 sm:gap-4">
                 <div className="w-20 sm:w-32 text-xs sm:text-sm font-medium text-right leading-tight">Relationship Building</div>
                 <div className="flex-1 bg-border rounded-full h-6 relative overflow-hidden">
-                  <div className="bg-relationship-building h-full rounded-full flex items-center justify-end pr-1 sm:pr-3" style={{width: '20%'}}>
+                  <div className="bg-relationship-building h-full rounded-full flex items-center justify-end pr-1 sm:pr-3 w-[30%] sm:w-[20%]">
                     <span className="text-relationship-building-foreground text-xs font-semibold">1 (8%)</span>
                   </div>
                 </div>

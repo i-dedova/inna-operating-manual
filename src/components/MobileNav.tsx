@@ -1,6 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -10,14 +11,22 @@ interface MobileNavProps {
 export const MobileNav = ({ isOpen, setIsOpen }: MobileNavProps) => {
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const headerHeight = 80; // Account for sticky header height
-      const elementPosition = element.offsetTop - headerHeight;
+    if (id === "hero") {
+      // Scroll to top for hero section
       window.scrollTo({
-        top: elementPosition,
+        top: 0,
         behavior: "smooth"
       });
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerHeight = 80; // Account for sticky header height
+        const elementPosition = element.offsetTop - headerHeight;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: "smooth"
+        });
+      }
     }
     setIsOpen(false);
   };
@@ -26,7 +35,12 @@ export const MobileNav = ({ isOpen, setIsOpen }: MobileNavProps) => {
     <>
       <header className="border-b border-border/50 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-lg lg:text-xl font-bold text-primary">Inna's Operating Manual</h1>
+          <button
+            onClick={() => scrollToSection("hero")}
+            className="text-lg lg:text-xl font-bold text-primary hover:text-primary/80 transition-colors"
+          >
+            Inna's Operating Manual
+          </button>
 
           {/* Desktop Navigation - Single Line */}
           <div className="hidden xl:flex items-center gap-8">
@@ -59,6 +73,7 @@ export const MobileNav = ({ isOpen, setIsOpen }: MobileNavProps) => {
                 Connect on LinkedIn
               </a>
             </nav>
+            <ThemeToggle />
           </div>
 
           {/* Tablet - Inline Navigation */}
@@ -94,10 +109,12 @@ export const MobileNav = ({ isOpen, setIsOpen }: MobileNavProps) => {
                 <span className="text-xs">Connect</span>
               </a>
             </Button>
+            <ThemeToggle />
           </div>
 
           {/* Mobile - Hamburger Menu */}
           <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="sm"

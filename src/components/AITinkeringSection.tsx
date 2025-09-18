@@ -27,11 +27,11 @@ export function AITinkeringSection() {
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">400%</div>
-                <div className="text-muted-foreground">better commitment follow-through</div>
+                <div className="text-muted-foreground">better commitment tracking</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">90%</div>
-                <div className="text-muted-foreground">faster technical answers</div>
+                <div className="text-muted-foreground">faster technical research</div>
               </div>
             </div>
 
